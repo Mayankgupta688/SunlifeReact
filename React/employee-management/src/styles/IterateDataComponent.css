@@ -1,0 +1,7 @@
+.employee-list p {
+    color: blue !important;
+}
+
+.employee-list .card-data {
+    border: 5px solid grey
+}

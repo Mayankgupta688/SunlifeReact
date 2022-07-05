@@ -1,5 +1,8 @@
 export default function RestrictUpdate(props) {
-    props.cloneData.name = "sdfkugsdg"
+
+    // Worst Practice to follow. 
+    // props.cloneData.name = "sdfkugsdg"
+
     debugger;
 
     return (
