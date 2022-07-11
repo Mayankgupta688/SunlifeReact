@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom";
 import React from "react";
 
-import Component from "./singlePageApplication/MainAppComponent";
+import Component from "./classComponents/EmployeeListComponent";
 
 ReactDOM.render((
     <>
