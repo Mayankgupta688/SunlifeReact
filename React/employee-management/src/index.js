@@ -1,11 +1,13 @@
 import ReactDOM from "react-dom";
 import React from "react";
 
-import Component from "./classComponents/EmployeeListComponent";
+import {ComponentOneWrapper, ComponentTwoWrapper, ComponentThreeWrapper} from "./hooks/HigherOrderComponent";
 
 ReactDOM.render((
     <>
-        <Component></Component>
+        <ComponentOneWrapper></ComponentOneWrapper><br/><hr/>
+        <ComponentTwoWrapper></ComponentTwoWrapper><br/><hr/>
+        <ComponentThreeWrapper></ComponentThreeWrapper>
     </>
 )
 , document.getElementById("root"));

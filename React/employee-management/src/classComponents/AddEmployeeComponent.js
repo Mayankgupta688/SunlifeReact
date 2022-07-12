@@ -22,6 +22,12 @@ export default class AddEmployeeComponent extends React.Component {
     addEmployee = () => {
         Axios.post("http://localhost:4000/employees/", this.state).then(() => {
             this.props.addNewEmployee(this.state)
+            this.setState({
+                name: "",
+                id: "",
+                avatar: "https://media.istockphoto.com/photos/speech-of-leader-picture-id936308858?k=20&m=936308858&s=612x612&w=0&h=wUg8CWCsGVqIATjxM4wpj50YBm3OIlNMU0TAQInHvf8=",
+                createdAt: ""
+            })
         });
     }
 
