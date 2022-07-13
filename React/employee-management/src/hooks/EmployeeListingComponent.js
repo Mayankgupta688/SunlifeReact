@@ -6,11 +6,21 @@ export default function EmployeeListingComponent() {
     var [employeeList, setEmployeeList] = useState([]);
 
     useEffect(() => {
+
+        // componentDidMount
+
         Axios.get("http://localhost:4000/employees").then((response) => {
             debugger;
             setEmployeeList(response.data)
         })
     }, [])
+
+    useEffect(() => {
+
+        // componentDidMount + componentDidUpdate
+
+        console.log("Component Re-Rendered...")
+    });
 
     function deleteEmployee(event) {
         var employeeToBeDeleted = event.target.id;
