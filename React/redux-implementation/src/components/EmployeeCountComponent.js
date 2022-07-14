@@ -1,4 +1,5 @@
 import React from 'react';
+import * as action from "../actions/employeeAction";
 
 import { connect } from "react-redux";
 
@@ -8,7 +9,8 @@ class EmployeeCountComponent extends React.Component {
         debugger;
         return (
             <>
-                <h1>Employee Count is Given Below {this.props.employees.length}</h1><hr/>
+                <h1>Employee Count is Given Below {this.props.employees.length}</h1>
+                <input type="button" value="Delete All" onClick={this.props.deleteAllEmployee} /><hr/>
             </>
         )
     }
@@ -20,6 +22,6 @@ function mapPropsFromStore(store) {
     }
 }
 
-EmployeeCountComponent = connect(mapPropsFromStore, null)(EmployeeCountComponent)
+EmployeeCountComponent = connect(mapPropsFromStore, action)(EmployeeCountComponent)
 
 export default EmployeeCountComponent

@@ -25,17 +25,13 @@ class EmployeeListComponent extends React.Component {
                         })}
                     </>
                 )}
+
+                <input type="button" value="Get Data" />
                 <hr/>
             </>
         )
     }
 
-    componentDidMount() {
-        Axios.get("https://5a530e1477e1d20012fa066a.mockapi.io/login").then((response) => {
-            debugger;
-            this.props.addEmployeeList(response.data);
-        })
-    }
 }
 
 // Connect the data from the store, Actions that are required by the component from Redux
@@ -49,6 +45,6 @@ function mapPropsFromStore(store) {
     }
 }
 
-EmployeeListComponent = connect(mapPropsFromStore, actions)(EmployeeListComponent)
+var EmployeeListComponentWrapper = connect(mapPropsFromStore, actions)(EmployeeListComponent)
 
-export default EmployeeListComponent
+export default EmployeeListComponentWrapper;
