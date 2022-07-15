@@ -44,10 +44,8 @@ export default class EmployeeListComponent extends React.Component {
     deleteEmployee = (event) => {
 
         Axios.delete("http://localhost:4000/employees/" + event.target.id).then((response) => {
-            debugger;
             alert("Employee Deleted");
             Axios.get("http://localhost:4000/employees").then((response) => {
-                debugger;
                 this.setState({
                     employeeList: response.data
                 })
@@ -61,15 +59,18 @@ export default class EmployeeListComponent extends React.Component {
             <>
                 <AddEmployeeComponent addNewEmployee={this.addNewEmployee}></AddEmployeeComponent>
                 <h1>The Employee Count is: {this.state.employeeList.length}</h1>
-                {this.state.employeeList.map((employee) => {
-                    return <ShowEmployee deleteEmployee={this.deleteEmployee} history={this.props.history} employee={employee}></ShowEmployee>
+                {this.state.employeeList.map((employee, index) => {
+                    return (
+                        <>
+                            <ShowEmployee deleteEmployee={this.deleteEmployee} history={this.props.history} employee={employee}></ShowEmployee>
+                        </>
+                    )
                 })}
             </>
         )
     }
 
     componentDidMount() {
-        debugger;
         Axios.get("http://localhost:4000/employees").then((response) => {
             debugger;
             this.setState({

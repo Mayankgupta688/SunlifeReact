@@ -32,7 +32,7 @@ export default class ShowSpecificEmployee extends React.Component {
     }
 
     componentDidMount() {
-        Axios.get("https://5a530e1477e1d20012fa066a.mockapi.io/login/" + this.props.match.params.empId).then((response) => {
+        Axios.get("http://localhost:4000/" + this.props.match.params.empId).then((response) => {
             this.setState({
                 employeeDetails: {
                     ...this.state.employeeDetails,
