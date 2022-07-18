@@ -1,0 +1,6 @@
+{
+    "configuration": {
+        "port": 6000,
+        "discardComments": false
+    }
+}

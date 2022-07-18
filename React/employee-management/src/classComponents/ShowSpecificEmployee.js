@@ -5,7 +5,6 @@ import Axios from "axios"
 
 export default class ShowSpecificEmployee extends React.Component {
     constructor() {
-        debugger;
         super();
         this.state = {
             employeeDetails: {
@@ -32,7 +31,8 @@ export default class ShowSpecificEmployee extends React.Component {
     }
 
     componentDidMount() {
-        Axios.get("http://localhost:4000/" + this.props.match.params.empId).then((response) => {
+        Axios.get("http://localhost:4000/employees/" + this.props.match.params.empId).then((response) => {
+            debugger;
             this.setState({
                 employeeDetails: {
                     ...this.state.employeeDetails,

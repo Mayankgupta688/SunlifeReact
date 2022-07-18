@@ -31,7 +31,13 @@ export default class MainAppComponent extends React.Component {
                                 <Route exact path="/help" component={HelpComponent}></Route>
                                 <Route exact path="/about" component={AboutComponent}></Route>
                                 <Route exact path="/employees" component={EmployeeListComponent}></Route>
-                                <Route exact path="/employees/:empId" component={ShowSpecificEmployee}></Route>
+                                <Route exact path="/employees/:empId" render={(props) => {
+                                    debugger;
+                                    if(+props.match.params.empId < 45) {
+                                        return <EmployeeNotFound></EmployeeNotFound>
+                                    }
+                                    return <ShowSpecificEmployee {...props}></ShowSpecificEmployee>
+                                }}></Route>
                                 <Route component={PageNotFound}></Route>
                             </Switch>
               
@@ -46,6 +52,10 @@ export default class MainAppComponent extends React.Component {
 
 function PageNotFound() {
     return <h1>The Page Specified do not Work/Exists</h1>
+}
+
+function EmployeeNotFound() {
+    return <h1>Employee Not Found</h1>
 }
 
 function HomeComponent() {
